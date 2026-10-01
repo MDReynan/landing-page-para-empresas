@@ -2265,3 +2265,55 @@ body {
 .manifesto-link:hover {
   color: #ffffff !important;
 }
+
+/* AJUSTES PARA TELEMÓVEL / RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+  /* 1. Ajuste do Cabeçalho / Menu */
+  header, nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Oculta ou empilha os links do menu para não sobreporem a logo */
+  nav ul, .menu-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* 2. Ajuste da Secção Hero (Início) */
+  .hero-container, .hero-section {
+    display: flex;
+    flex-direction: column-reverse; /* Coloca a imagem no topo e o texto por baixo, ou 'column' para o texto em cima */
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  /* Redimensiona e centraliza a imagem circular */
+  .hero-image, .hero-img-container {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 20px auto;
+  }
+
+  /* 3. Ajuste dos Botões e Tipografia */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1, .hero-title {
+    font-size: 2rem; /* Diminui o tamanho do título para caber no ecrã */
+  }
+}
