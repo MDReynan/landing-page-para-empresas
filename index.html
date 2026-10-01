@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua empresa será vista!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- CABEÇALHO (Fica fixo/congelado no topo) -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="img/sualogoaqui.png" alt="Sua logo aqui!">
+      <div class="logo-text">
+        <span class="brand-name">O nome da sua emepresa aqui!</span>
+        <span class="brand-sub">QUE TAL?</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#servicos">SERVIÇOS</a>
+      <a href="#trabalhos">TRABALHOS</a>
+      <a href="#oficina">A OFICINA</a>
+      <a href="#duvidas">DÚVIDAS</a>
+
+      <!-- CONTATO leva direto pro WhatsApp -->
+      <a href="https://wa.me/5527992325642?text=Ol%C3%A1!%20Gostaria%20de%20entrar%20em%20contato."
+        target="_blank">CONTATO</a>
+
+      <!-- ORÇAMENTO abre o modal via JS -->
+      <button id="btn-orcamento" class="btn-orcamento">ORÇAMENTO ↗</button>
+    </nav>
+  </header>
+
+  <!-- JANELA FLUTUANTE (MODAL DE ORÇAMENTO) -->
+  <div id="modal-orcamento" class="modal-overlay">
+    <div class="modal-conteudo">
+      <button id="btn-fechar-modal" class="btn-fechar">&times;</button>
+
+      <h2>Solicitar Orçamento</h2>
+      <p>Preencha os dados abaixo e entraremos em contato:</p>
+
+      <form id="form-orcamento" class="form-orcamento">
+        <div class="campo">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Número / WhatsApp:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(27) 90000-0000" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="observacoes">Observações:</label>
+          <textarea id="observacoes" name="observacoes" rows="4"
+            placeholder="Descreva as peças, quantidade ou detalhes do serviço..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Pedir Orçamento</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- SECÇÃO PRINCIPAL (HERO) -->
+  <section class="hero-section">
+    <div class="hero-container">
+
+      <!-- Lado Esquerdo: Textos e Botões -->
+      <div class="hero-content">
+        <span class="location-tag">— VILA VELHA · ESPÍRITO SANTO</span>
+
+        <h1 class="hero-title">
+          O QUE DEFINE.<br>
+          <span class="highlight-red">A SUA EMPRESA?</span>
+        </h1>
+
+        <p class="hero-description">
+          Faça aqui uma breve descrição de qual serviço a sua empresa faz,
+          quais serviços ela presta. Qual o seu ramo de atuação?
+        </p>
+
+        <div class="hero-buttons">
+  <!-- Botão 1: Rola a página suavemente até o formulário -->
+  <a href="#contato" class="btn-primary">FAÇA SEU ORÇAMENTO ↗</a>
+
+  <!-- Botão 2: Abre a conversa direta no WhatsApp -->
+  <a href="https://wa.me/5527992325642?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn-secondary">FALAR NO WHATSAPP →</a>
+</div>
+
+        <!-- Estatísticas -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>+10</h3>
+            <p>ANOS DE OFÍCIO</p>
+          </div>
+          <div class="stat-item">
+            <h3>+2.000</h3>
+            <p>SERVIÇOS CONCLUÍDOS</p>
+          </div>
+          <div class="stat-item">
+            <h3>5 anos</h3>
+            <p>DE GARANTIA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito: Ilustração com Animação (Flutuar e Inclinar) -->
+      <div class="hero-illustration">
+        <div class="red-circle-bg"></div>
+        <img src="img/MDR.png" alt="Ilustração Pintura Eletrostática" class="floating-skull">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAIXA VERMELHA COM TEXTO INFINITO (MARQUEE) -->
+  <div class="ticker-wrapper">
+    <div class="ticker-content">
+      <span>AQUI VOCÊ PODE &nbsp;+&nbsp; USAR PALAVRAS CHAVES &nbsp;+&nbsp; QUE EXPLIQUEM &nbsp;+&nbsp; O SEU SERVIÇO
+        &nbsp;+&nbsp; O QUE VOCÊ FAZ? &nbsp;+&nbsp; CONTA PRA GENTE &nbsp;+&nbsp; </span>
+      <!-- Repetição do conteúdo para criar o loop contínuo perfeito -->
+      <span>AQUI VOCÊ PODE &nbsp;+&nbsp; USAR PALAVRAS CHAVES &nbsp;+&nbsp; QUE EXPLIQUEM &nbsp;+&nbsp; O SEU SERVIÇO
+        &nbsp;+&nbsp; O QUE VOCÊ FAZ? &nbsp;+&nbsp; CONTA PRA GENTE &nbsp;+&nbsp; </span>
+    </div>
+  </div>
+  <!-- SECÇÃO: O QUE FAZEMOS / SOBRE O PROCESSO -->
+  <section class="about-intro-section">
+    <div class="container">
+
+      <!-- Tag pequena de topo -->
+      <span class="section-tag">— O QUE FAZEMOS</span>
+
+      <!-- Título de Alto Impacto -->
+      <h2 class="about-title">
+        CONTE-NOS MAIS DETALHES<br>
+        <span class="highlight-red">SOBRE O QUE VOCÊ RESOLVE.</span>
+      </h2>
+
+      <!-- Descrição Curta -->
+      <p class="about-description">
+        Qual é a qualidade final do ser serviço? Como fica o seu serviço, o produto final?
+      </p>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE LISTA DE SERVIÇOS -->
+  <section id="servicos" class="services-list-section">
+    <div class="container">
+      <div class="services-wrapper">
+
+        <!-- Serviço 01 -->
+        <div class="service-item">
+          <span class="service-number">01</span>
+          <div class="service-content">
+            <h3 class="service-title">SERVIÇO 1</h3>
+            <p class="service-description">
+              Descrição do serviço 01. Aqui você pode detalhar o que é feito, como é feito e quais são os benefícios
+              para o cliente.
+            </p>
+          </div>
+        </div>
+
+        <!-- Serviço 02 -->
+        <div class="service-item">
+          <span class="service-number">02</span>
+          <div class="service-content">
+            <h3 class="service-title">SERVIÇO 2</h3>
+            <p class="service-description">
+              Descrição do serviço 02. Aqui você pode detalhar o que é feito, como é feito e quais são os benefícios
+              para o client.
+            </p>
+          </div>
+        </div>
+
+        <!-- Serviço 03 -->
+        <div class="service-item">
+          <span class="service-number">03</span>
+          <div class="service-content">
+            <h3 class="service-title">SERVIÇO 3</h3>
+            <p class="service-description">
+              Descrição do serviço 03. Aqui você pode detalhar o que é feito, como é feito e quais são os benefícios
+              para o cliente.
+            </p>
+          </div>
+        </div>
+
+        <!-- Serviço 04 -->
+        <div class="service-item">
+          <span class="service-number">04</span>
+          <div class="service-content">
+            <h3 class="service-title">SERVIÇO 4</h3>
+            <p class="service-description">
+              Descrição do serviço 04. Aqui você pode detalhar o que é feito, como é feito e quais são os benefícios
+              para o cliente.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PORTFÓLIO / TRABALHOS -->
+  <section id="trabalhos" class="portfolio-section">
+    <div class="container portfolio-grid">
+
+      <!-- Coluna da Esquerda: Títulos -->
+      <div class="portfolio-header-left">
+        <span class="portfolio-tag">— PORTFÓLIO</span>
+        <h2 class="portfolio-title">
+          QUALIDADE INDUSTRIAL.<br>
+          <span class="highlight-green">ENTREGUE NO DETALHE.</span>
+        </h2>
+      </div>
+
+      <!-- Coluna da Direita: Texto Descritivo -->
+      <div class="portfolio-header-right">
+        <p class="portfolio-description">
+          Alguns trabalhos que passaram pela nossa linha de "serviço". O próximo pode ser o seu.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERIA / CATEGORIAS DO PORTFÓLIO -->
+  <section class="portfolio-gallery-section">
+    <div class="container">
+
+
+
+      <!-- MENU DE NAVEGAÇÃO DE CATEGORIAS (TOPO) -->
+      <nav class="portfolio-tabs">
+        <button class="tab-btn active" data-category="todos">TODOS</button>
+        <button class="tab-btn" data-category="cat1">CATEGORIA 1</button>
+        <button class="tab-btn" data-category="cat2">CATEGORIA 2</button>
+        <button class="tab-btn" data-category="cat3">CATEGORIA 3</button>
+        <button class="tab-btn" data-category="cat4">CATEGORIA 4</button>
+        <button class="tab-btn" data-category="cat5">CATEGORIA 5</button>
+      </nav>
+
+      <!-- BLOCO DE CATEGORIA 1 -->
+      <div class="category-block" data-category="cat1">
+        <div class="category-header">
+          <h3 class="category-title">CATEGORIA 1</h3>
+          <span class="category-hint">FOTOS DO PROJETO</span>
+        </div>
+
+        <!-- NOVA GRELHA DE GALERIA -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/cat1/bike.jpeg" alt="Foto 1 Categoria 1" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat1/Electrostatic Painting Sydney.jpg" alt="Foto 2 Categoria 1" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat1/porto.avif" alt="Foto 3 Categoria 1" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat1/rodas.avif" alt="Foto 4 Categoria 1" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO DE CATEGORIA 2 -->
+      <div class="category-block" data-category="cat2">
+        <div class="category-header">
+          <h3 class="category-title">CATEGORIA 2</h3>
+          <span class="category-hint">FOTOS DO PROJETO</span>
+        </div>
+
+        <!-- NOVA GRELHA DE GALERIA -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/cat2/as.jpg" alt="Foto 1 Categoria 2" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat2/auto.jpg" alt="Foto 2 Categoria 2" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat2/Carro detling close-up.jpg" alt="Foto 3 Categoria 2" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat2/High-Quality Automotive.jpg" alt="Foto 4 Categoria 2" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO DE CATEGORIA 3 -->
+      <div class="category-block" data-category="cat3">
+        <div class="category-header">
+          <h3 class="category-title">CATEGORIA 3</h3>
+          <span class="category-hint">FOTOS DO PROJETO</span>
+        </div>
+
+        <!-- NOVA GRELHA DE GALERIA -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/cat3/@mcbill_y on instagram.jpg" alt="Foto 1 Categoria 3" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat3/Jaques barbershop.jpg" alt="Foto 2 Categoria 3" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat3/download.jpg" alt="Foto 3 Categoria 3" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat3/🔥 O universo da barber.jpeg" alt="Foto 4 Categoria 3" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO DE CATEGORIA 4 -->
+      <div class="category-block" data-category="cat4">
+        <div class="category-header">
+          <h3 class="category-title">CATEGORIA 4</h3>
+          <span class="category-hint">FOTOS DO PROJETO</span>
+        </div>
+
+        <!-- NOVA GRELHA DE GALERIA -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/cat4/download (1).jpg" alt="Foto 1 Categoria 4" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat4/download.jpg" alt="Foto 2 Categoria 4" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat4/I will design, develop or redesign wix website, wix developer.jpg"
+              alt="Foto 3 Categoria 4" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat4/Seu negócio ainda não tem site.jpeg" alt="Foto 4 Categoria 4" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO DE CATEGORIA 5 -->
+      <div class="category-block" data-category="cat5">
+        <div class="category-header">
+          <h3 class="category-title">CATEGORIA 5</h3>
+          <span class="category-hint">FOTOS DO PROJETO</span>
+        </div>
+
+        <!-- NOVA GRELHA DE GALERIA -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/cat5/Contractors Oklahoma City Experts in Metal Construction and Fabrication.jpg"
+              alt="Foto 1 Categoria 5" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat5/download.jpg" alt="Foto 2 Categoria 5" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat5/Life As A Merchant Marine with John Dunaway.jpg" alt="Foto 3 Categoria 5"
+              class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="img/cat5/mt.jpg" alt="Foto 4 Categoria 5" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO MANIFESTO / SOBRE (FUNDO VERDE) -->
+      <section class="manifesto-section">
+        <!-- Letra d'água gigante de fundo (CV) -->
+        <div class="watermark-letter">SIGLA DA SUA LOGO</div>
+
+        <div class="container manifesto-container">
+
+          <!-- Sigla / Sigil no canto esquerdo -->
+          <div class="manifesto-badge">
+            <span class="badge-text">SIGLA DA SUA LOGO</span>
+            <span class="badge-slashes">///</span>
+          </div>
+
+          <!-- Conteúdo Central -->
+          <div class="manifesto-content">
+            <span class="manifesto-tag">— MUITO ALÉM DA ESTÉTICA</span>
+
+            <h2 class="manifesto-title">
+              SOMOS O LUGAR ONDE A RESISTÊNCIA ENCONTRA A PERFEIÇÃO.
+            </h2>
+
+            <p class="manifesto-description">
+              Fale-nos aqui sobre o motivo de sua empresa existir,
+              qual é a sua missão, visão e valores. O que diferencia
+              a sua empresa das demais? O que você entrega de valor
+              para o seu cliente?
+            </p>
+
+            <button id="btn-conhecer-estrutura" class="manifesto-link btn-estrutura-link">
+              CONHEÇA A NOSSA ESTRUTURA <span class="arrow">↗</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO DE DEPOIMENTOS / TESTEMUNHOS -->
+      <section class="testimonials-section">
+        <div class="container">
+
+          <!-- Cabeçalho da Seção -->
+          <div class="testimonials-header">
+            <div class="header-left">
+              <span class="testimonials-tag">— VOZ DE QUEM TROUXE</span>
+              <h2 class="testimonials-title">
+                O RESULTADO<br>
+                <span class="highlight-color">FALA MAIS ALTO.</span>
+              </h2>
+            </div>
+            <div class="header-right">
+              <p class="testimonials-subtitle">
+                Não pedimos confiança no escuro. Veja o que quem já "serviço" conosco tem a dizer.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARROSSEL / ESTEIRA DE DEPOIMENTOS -->
+          <div class="testimonials-carousel-wrapper">
+            <div class="testimonials-track" id="testimonialTrack">
+
+              <!-- Cartão 01 -->
+              <div class="testimonial-card">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Ricardo Santos</strong>
+                  <span>Serralheria Modelo</span>
+                </div>
+              </div>
+
+              <!-- Cartão 02 -->
+              <div class="testimonial-card">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Ana Costa</strong>
+                  <span>Esquadrias Vitória</span>
+                </div>
+              </div>
+
+              <!-- Cartão 03 -->
+              <div class="testimonial-card">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Juliana Pereira</strong>
+                  <span>Arquitetura & Design</span>
+                </div>
+              </div>
+
+              <!-- Cartão 04 -->
+              <div class="testimonial-card">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Carlos Eduardo</strong>
+                  <span>Metalúrgica CE</span>
+                </div>
+              </div>
+
+              <!-- REPETIÇÃO DOS CARTÕES PARA ANIMAÇÃO INFINITA E CONTÍNUA -->
+              <div class="testimonial-card" aria-hidden="true">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Ricardo Santos</strong>
+                  <span>Serralheria Modelo</span>
+                </div>
+              </div>
+
+              <div class="testimonial-card" aria-hidden="true">
+                <div class="quote-icon">”</div>
+                <p class="testimonial-text">
+                  Coloque aqui os feedbacks dos clientes.
+                </p>
+                <div class="testimonial-author">
+                  <strong>Ana Costa</strong>
+                  <span>Esquadrias Vitória</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+         
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO: DIFERENCIAIS E PROCESSO (FUNDO BEGE) -->
+      <section id="oficina" class="process-section">
+        <div class="container process-container">
+
+          <!-- LADO ESQUERDO: BANNER / IMAGEM COM TAGS -->
+          <div class="process-banner">
+            <div class="banner-image-placeholder">
+              <!-- Localização / Ano no topo superior direito da imagem -->
+              <div class="banner-meta">VILA VELHA, ES — 2026</div>
+
+              <!-- Texto sobreposto na imagem -->
+              <h3 class="banner-overlay-title">ESTRUTURA<br>ABERTA</h3>
+            </div>
+
+            <!-- Tag em destaque (Caixa Verde) -->
+            <div class="banner-tag-box">
+              A FÁBRICA É O NOSSO LABORATÓRIO.
+            </div>
+          </div>
+
+          <!-- LADO DIREITO: CONTEÚDO E LISTA DE DIFERENCIAIS -->
+          <div class="process-content">
+            <span class="process-tag">— NOME DA SUA EMPRESA </span>
+
+            <h2 class="process-title">
+              FRASE DE<br>
+              EFEITO.<br>
+              <span class="highlight-green">ESCOLHA A SUA.</span>
+            </h2>
+
+            <p class="process-description">
+              Complemente a sua frase de efeito aqui com alguma frase, 
+              por exemplo, como é a qualidade ideal do serviço.
+            </p>
+
+            <!-- GRID DE TÓPICOS / DIFERENCIAIS -->
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Profissionais com vasta experiência no setor x</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Equipamentos de padrão, por exemplo, industrial, certificado, 
+                  escolha o que se enquadra com a sua empresa</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Orçamento transparente e sem custos ocultos na entrega</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Garantia de x coisas relacionada ao seus serviços</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Atendimento rápido e direto via WhatsApp</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Atendimento a empresas, indústrias e outros</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Mais especificações sobre o seu serviço</p>
+              </div>
+              <div class="feature-item">
+                <span class="bullet">✦</span>
+                <p>Processos rigorosos de X serviços</p>
+              </div>
+            </div>
+
+            <!-- NÚMEROS / ESTATÍSTICAS -->
+            <div class="stats-row">
+              <div class="stat-item">
+                <span class="stat-number">+10</span>
+                <span class="stat-label">ANOS DE MERCADO</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">+5k</span>
+                <span class="stat-label">PROJETOS ENTREGUES</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5★</span>
+                <span class="stat-label">AVALIAÇÃO GOOGLE</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO FAQ / PERGUNTAS FREQUENTES -->
+      <section id="duvidas" class="faq-section">
+        <div class="container faq-container">
+
+          <!-- LADO ESQUERDO: TÍTULO E SUBTÍTULO -->
+          <div class="faq-header">
+            <span class="faq-tag">— SEM ENROLAÇÃO</span>
+            <h2 class="faq-title">
+              ANTES DE<br>
+              <span class="highlight-green">ORÇAR.</span>
+            </h2>
+            <p class="faq-subtitle">
+              As dúvidas que mais chegam no WhatsApp, respondidas direto.
+            </p>
+          </div>
+
+          <!-- LADO DIREITO: ACCORDION DE PERGUNTAS -->
+          <div class="faq-accordion">
+
+            <!-- Item 1 (Aberto por padrão) -->
+            <div class="faq-item active">
+              <button class="faq-question">
+                <span>Quanto tempo leva para realizar o serviço X?</span>
+                <span class="faq-icon">×</span>
+              </button>
+              <div class="faq-answer">
+                <p>Normalmente de 2 a 5 dias úteis (vai de acordo com a 
+                  sua empresa)
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Qual é a garantia do serviço X?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Oferecemos garantia total contra X situações.</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>MAiS PERGUNTAS QUE SERIAM INTERESSANTES DE TER</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Coloque sua resposta aqui.</p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>O orçamento é gratuito?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Coloque sua resposta aqui.</p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Quais formas de pagamento são aceitas?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Coloque sua resposta aqui.</p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>MAiS PERGUNTAS QUE SERIAM INTERESSANTES DE TER</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Coloque sua resposta aqui.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Link para o arquivo JavaScript -->
+      <script src="script.js"></script>
+
+      <!-- SEÇÃO CONTATO / ORÇAMENTO -->
+      <section id="contato" class="contact-section">
+        <div class="contact-container">
+
+          <!-- COLUNA ESQUERDA (VERDE / INFORMATIVA) -->
+          <div class="contact-info">
+            <div class="info-content">
+              <span class="info-tag">— O PRIMEIRO PASSO</span>
+              <h2 class="info-title">
+                UMA "PERGUNTA"<br>
+                DE<br>
+                EFEITO
+              </h2>
+
+              <p class="info-description">
+                Conte o que precisa orçar. A gente responde com uma solução técnica e um orçamento sem compromisso.
+              </p>
+            </div>
+
+            <div class="direct-whatsapp">
+              <span class="whatsapp-label">WHATSAPP DIRETO</span>
+              <a href="https://wa.me/5527992325642" target="_blank" class="whatsapp-number">(27) 99232-5642</a>
+            </div>
+          </div>
+
+          <!-- COLUNA DIREITA (FORMULÁRIO ESCURO) -->
+          <div class="contact-form-wrapper">
+            <form class="quote-form" id="quoteForm">
+
+              <!-- Campo: Nome -->
+              <div class="form-group full-width">
+                <label for="name">SEU NOME *</label>
+                <input type="text" id="name" placeholder="Como podemos te chamar?" required>
+              </div>
+
+              <!-- Campos: WhatsApp e E-mail -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">WHATSAPP *</label>
+                  <input type="tel" id="phone" placeholder="(27) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-MAIL</label>
+                  <input type="email" id="email" placeholder="seu@email.com">
+                </div>
+              </div>
+
+              <!-- Campos: Tipo de Peça e Quantidade/Dimensões -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="material">TIPO DE PEÇA / MATERIAL *</label>
+                  <input type="text" id="material" placeholder="Ex.: Perfil de alumínio, portão, estrutura" required>
+                </div>
+                <div class="form-group">
+                  <label for="quantity">QUANTIDADE / DIMENSÕES</label>
+                  <input type="text" id="quantity" placeholder="Ex.: 10 peças / 6 metros">
+                </div>
+              </div>
+
+              <!-- Campo: Selecionar Serviço -->
+              <div class="form-group full-width">
+                <label for="service">O QUE PRECISA? *</label>
+                <select id="service" required>
+                  <option value="" disabled selected>Selecione o serviço</option>
+                  <option value="Pintura Eletrostática a Pó">Pintura Eletrostática a Pó</option>
+                  <option value="Decapagem / Tratamento de Superfície">Decapagem / Tratamento de Superfície</option>
+                  <option value="Rework / Restauração de Peças">Rework / Restauração de Peças</option>
+                  <option value="Outros Serviços">Outros Serviços</option>
+                </select>
+              </div>
+
+              <!-- Campo: Descrição -->
+              <div class="form-group full-width">
+                <label for="details">DESCREVA O SERVIÇO *</label>
+                <textarea id="details" rows="3"
+                  placeholder="Qual a cor desejada? As peças têm ferrugem ou tinta antiga?" required></textarea>
+              </div>
+
+              <!-- Botão de Envio -->
+              <button type="submit" class="submit-btn">
+                ENVIAR PARA O WHATSAPP ↗
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO ONDE ESTAMOS / LOCALIZAÇÃO -->
+      <section class="location-section">
+        <div class="container location-container">
+
+          <!-- CABEÇALHO -->
+          <div class="location-header">
+            <div class="header-left">
+              <span class="location-tag">— ONDE ESTAMOS</span>
+              <h2 class="location-title">
+                CHEGA DE<br>
+                <span class="highlight-green">QUALQUER LUGAR.</span>
+              </h2>
+            </div>
+            <div class="header-right">
+              <p>Divino Espírito Santo, Vila Velha. Fácil de chegar, difícil de esquecer.</p>
+            </div>
+          </div>
+
+          <!-- CARDS DE INFORMAÇÃO -->
+          <div class="location-cards-grid">
+
+            <!-- CARD 1: ENDEREÇO -->
+            <div class="location-card">
+              <span class="card-label">ENDEREÇO</span>
+              <div class="card-content">
+                <p class="address-line">Rua São Bento, 1</p>
+                <p class="address-line">Divino Espírito Santo</p>
+                <p class="address-line">Vila Velha — ES</p>
+              </div>
+              <a href="https://maps.google.com/?q=Rua+São+Bento,+1,+Divino+Espírito+Santo,+Vila+Velha+-+ES"
+                target="_blank" class="card-link">
+                ABRIR NO MAPS ↗
+              </a>
+            </div>
+
+            <!-- CARD 2: HORÁRIOS -->
+            <div class="location-card">
+              <span class="card-label">HORÁRIOS</span>
+              <div class="card-content">
+                <p class="hours-line"><strong>Seg — Sex</strong> · 08h às 18h</p>
+                <p class="hours-line"><strong>Sábado</strong> · 08h às 12h</p>
+                <p class="hours-line muted"><strong>Domingo</strong> · Fechado</p>
+              </div>
+              <a href="tel:5527992325642" class="card-link">
+                LIGAR AGORA ↗
+              </a>
+            </div>
+
+            <!-- CARD 3: CALL TO ACTION (VERDE) -->
+            <div class="location-card cta-card">
+              <span class="card-label">FALE DIRETO</span>
+              <div class="card-content">
+                <p class="cta-text">Resposta rápida em horário comercial.</p>
+              </div>
+              <a href="https://wa.me/5527992325642" target="_blank" class="cta-link">
+                CHAMAR NO WHATSAPP ↗
+              </a>
+            </div>
+
+          </div>
+
+          <!-- MAPA EMBUTIDO (GOOGLE MAPS) -->
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.134567!2d-40.29!3d-20.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUnVhIFPDo28gQmVudG8sIDEsIERpdmlubyBFc3DDrXJpdG8gU2FudG8sIFZpbGEgVmVsaGEgLSBFUw!5e0!3m2!1spt-BR!2sbr!4v1"
+              width="100%" height="350" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RODAPÉ DA PÁGINA (FOOTER) -->
+      <footer class="site-footer">
+        <div class="container footer-container">
+
+          <!-- COLUNA 1: LOGO E SOBRE -->
+          <div class="footer-col footer-about">
+            <div class="footer-brand">
+              <span class="brand-title">O NOME DA</span>
+              <span class="brand-sub">SUA EMPRESA</span>
+            </div>
+            <p class="footer-desc">
+              Frase de efeito da sua empresa.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com" target="_blank">INSTAGRAM ↗</a>
+              <a href="https://wa.me/5527992325642" target="_blank">WHATSAPP ↗</a>
+            </div>
+          </div>
+
+          <!-- COLUNA 2: NAVEGAÇÃO / ÂNCORAS -->
+          <div class="footer-col footer-nav">
+            <span class="footer-label">NAVEGAÇÃO</span>
+            <ul class="footer-links">
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#trabalhos">Trabalhos</a></li>
+              <li><a href="#oficina">A fábrica</a></li>
+              <li><a href="#duvidas">Dúvidas</a></li>
+            </ul>
+          </div>
+
+          <!-- COLUNA 3: CONTATO E HORÁRIOS -->
+          <div class="footer-col footer-contact">
+            <span class="footer-label">CONTATO</span>
+            <ul class="contact-info-list">
+              <li><a href="https://wa.me/5527992325642" target="_blank">(27) 99232-5642</a></li>
+              <li><span>contato@canelaverde.com.br</span></li>
+              <li class="schedule-item">Seg — Sex: 08h–18h</li>
+              <li class="schedule-item">Sáb: 08h–12h</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- LINHA INFERIOR (COPYRIGHT) -->
+        <div class="footer-bottom">
+          <div class="container bottom-container">
+            <p>© 2026 O NOME DA SUA EMPRESA.</p>
+            <p>FEITO EM VILA VELHA, " MINI FRASE DE EFEITO".</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modal de Vídeo da Estrutura -->
+      <div id="modal-estrutura" class="modal-estrutura-overlay">
+        <div class="modal-estrutura-content video-modal">
+          <button class="modal-estrutura-close" id="btn-fechar-estrutura">&times;</button>
+
+          <div class="modal-estrutura-header">
+            <h2>CONHEÇA A NOSSA ESTRUTURA</h2>
+            <p>Assista ao vídeo e veja como preparamos e executamos nossos serviços.</p>
+          </div>
+
+          <!-- Container do Vídeo -->
+          <div class="video-container">
+            <!-- OPÇÃO A: Vídeo local MP4 -->
+            <video id="video-estrutura" controls poster="images/thumb-video.jpg">
+              <source src="vid/melevapracasa.mp4" type="video/mp4">
+              O seu navegador não suporta a reprodução deste vídeo.
+            </video>
+
+            <!-- OPÇÃO B: Se preferires usar o YouTube (basta desmarcar este iframe e remover a tag <video> acima) -->
+            <!--
+      <iframe id="iframe-youtube" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      -->
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>
