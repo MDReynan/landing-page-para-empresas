@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `*Detalhes:* ${encodeURIComponent(details)}`;
 
       const whatsappNumber = '5527992325642';
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-      // Abre a conversa no WhatsApp em uma nova aba
-      window.open(whatsappUrl, '_blank');
+// Redireciona diretamente para o WhatsApp (evita o bloqueio de pop-up no celular)
+window.location.href = whatsappUrl;
 
       // CORREÇÃO: Limpa todos os campos do formulário principal imediatamente
       quoteForm.reset();
